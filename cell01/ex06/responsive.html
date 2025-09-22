@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Responsive Table</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      height: 100vh; 
+      table-layout: fixed;
+    }
+    td {
+      text-align: center;
+    }
+    .cell1 { background-color: greenyellow; }
+    .cell2 { background-color: rgb(250, 99, 99); }
+  </style>
 </head>
 <body>
-    
-    <hr>
-    <table style="width: 100%; border-collapse: collapse; height: 200px;">
-        <tr>
-            <td style="width: 50%; padding: 15px; background-color: greenyellow;">
-                <h1>First Cell</h1>
-            </td>
-
-            <td style="width: 50%; padding: 15px; background-color: rgb(250, 99, 99);">
-                <h1>Second Cell</h1>
-            </td>
-        </tr>
-    <tr> <td style= max-width:800px ;>
-        
-    </td> 
-        <tr> <td container-flex = flex-direction: column ></td>  </tr>
-    
-  </tr>
-
-    </table>
-
-
+  <table>
+    <tr>
+      <td class="cell1">First Cell</td>
+      <td class="cell2">Second Cell</td>
+    </tr>
+  </table>
 </body>
 </html>

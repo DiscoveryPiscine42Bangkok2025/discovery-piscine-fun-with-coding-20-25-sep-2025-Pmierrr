@@ -1,0 +1,79 @@
+/* --- ตั้งค่าพื้นฐาน --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* --- สไตล์ของแถบเมนูหลัก --- */
+nav {
+    background-color: #0076c0; /* สีน้ำเงินสไตล์ SNCF */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: inline-block; /* ทำให้แถบเมนูไม่ยาวเต็มหน้าจอ */
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* จัดเมนูให้อยู่ในแนวนอน */
+}
+
+nav ul li a, nav ul li button {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* --- สไตล์ของปุ่มดร็อปดาวน์ --- */
+nav ul li button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* ทำให้ขนาดฟอนต์เท่ากับลิงก์ */
+}
+
+nav ul li a:hover, nav ul li button:hover {
+    background-color: #005a91; /* สีเข้มขึ้นเมื่อเมาส์ชี้ */
+}
+
+/* --- ส่วนสำคัญ: การสร้างดร็อปดาวน์ --- */
+
+/* 1. เตรียมพื้นที่สำหรับดร็อปดาวน์ */
+.dropdown {
+    position: relative; /* กำหนดให้เป็นจุดอ้างอิงของ .dropdown-content */
+}
+
+/* 2. ซ่อนเมนูย่อยไว้ก่อน */
+.dropdown-content {
+    display: none; /* ซ่อนเมนูย่อยเป็นค่าเริ่มต้น */
+    position: absolute; /* ทำให้ลอยอยู่เหนือเนื้อหาอื่น */
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    z-index: 1;
+    padding: 10px 0;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    color: #333; /* เปลี่ยนสีลิงก์ในดร็อปดาวน์เป็นสีดำ */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block; /* ทำให้คลิกได้เต็มความกว้าง */
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* 3. หัวใจหลัก: แสดงเมนูย่อยเมื่อนำเมาส์ไปชี้ที่ .dropdown */
+.dropdown:hover .dropdown-content {
+    display: block; /* แสดงเมนูย่อยออกมา */
+}
