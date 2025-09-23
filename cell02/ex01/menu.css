@@ -29,7 +29,7 @@
     color: #ffffff;
   }
   li:hover {
-    background-color: #d10b0b;
+    background-color: #db9a9a;
   }
   .dropdown {
     position: absolute;
@@ -43,4 +43,5 @@
   .dropdown-link:hover .dropdown {
     /* show */
     opacity: 1;
+    transition: 0.3s;
   }
