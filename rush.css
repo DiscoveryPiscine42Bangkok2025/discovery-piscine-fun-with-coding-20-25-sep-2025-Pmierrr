@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* ทำให้การเลื่อนหน้าจอสมูทขึ้น */
+    scroll-padding-top: 70px; /* เพิ่มระยะห่างด้านบนเวลาคลิกลิงก์ เพื่อไม่ให้เนื้อหาถูกเมนูบัง */
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    min-height: 93vh;
+    width: 100%;
+    background: url(Artboard\ 1.png);
+    background-position: center;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    padding: 1% 6%;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;      /* สำหรับ Browser ทั่วไป */
+    top: 0;                /* กำหนดให้ติดที่ด้านบนสุดของจอ */
+    width: auto;           /* ทำให้เมนูเต็มความกว้าง */
+    background-color: #000000; /* ใส่สีพื้นหลังทึบ เพื่อไม่ให้เนื้อหาข้างล่างลอดขึ้นมา */
+    z-index: 1000;
+}
+
+nav img {
+    width: 150px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+/* textnavigation */
+.nav-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: gray;
+    display: block;
+    margin: auto;
+    transition: 0.4s;
+}
+
+.nav-links ul li:hover::after {
+    width: 100%;
+}
+
+/* Welcome */
+.text-box {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.text-box h1 {
+    font-size: 70px;
+}
+
+.text-box h1:hover {
+    text-shadow: 4px 4px 0 #000000;
+	transform: translate(-2px, -2px)
+}
+
+.text-box p {
+    font-size: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 30px;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    background-color: red;
+    border: 1px solid white;
+    padding: 20px 40px;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+/*------- Page ------- */
+
+.page {
+    color: white;
+    background: url(https://th.bing.com/th/id/R.27d09e9c4437d95d7ffc3f4d779cecc0?rik=Tz8dunwmASY36Q&pid=ImgRaw&r=0);
+    background-size: cover;
+    min-height: 90vh;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.page .row {
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+}
+
+.page .certi {
+    color: rgb(231, 231, 231);
+    flex-basis: 45%;
+    /* background: linear-gradient(rgba(179, 4, 4, 0.7),rgba(3, 3, 158, 0.7)); */
+    background: url(https://images.unsplash.com/photo-1699891730676-037bed3c1bed?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D);
+    margin-bottom: 5%;
+    padding: 60px 30px;
+    border-radius: 40px;
+    box-sizing: border-box;
+    
+}
+
+
+
+.page .certi .imgabout {
+    width: 100%; 
+    border-radius: 20px;
+}
+
+.page .certi .imgcontact {
+    width: 100%; 
+    border-radius: 20px;
+}
+
+.page .certi .info {
+    background: transparent;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.page .certi .info:hover {
+    background-color: red;
+    border: 1px solid white;
+    padding: 15px 29px;
+    font-size: 18px;
+    transition: 0.4s;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 2;
+  cursor: pointer;
+}
+
+/* --- Overlay --- */
+.overlay-content {
+    background-color: rgb(0, 0, 0,0.5);
+    padding: 70px;
+    border: 3px solid;
+    border-radius: 10px;
+  text-align: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+        
+/* --- Info Button --- */
+.info-button {
+    background: transparent;
+    margin-right: 15px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid white;
+    padding: 12px 25px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+}
+
+.info-button:hover {
+    background-color: red;
+    border: 1px solid white;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+.exp-button {
+    background: transparent;
+    margin-right: 15px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    padding: 12px 25px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+}
+
+.exp-button:hover {
+    background-color: red;
+    border: 1px solid white;
+    padding: 15px 30px;
+    font-size: 16px;
+    transition: 0.4s;
+}
+
+
+
+/*------- Img-about Page ------- */
+.imgabout {
+  --_g: 10%/45% 45% no-repeat conic-gradient(#000 0 0);
+  mask: 
+    left   var(--_i,) top    var(--_g),
+    bottom var(--_i,) left   var(--_g),
+    top    var(--_i,) right  var(--_g),
+    right  var(--_i,) bottom var(--_g);
+  filter: grayscale();
+  transition: .3s linear;
+}
+
+.imgabout:hover {
+  --_i: 10%;
+  filter: grayscale(0);
+}
+
+.container {
+  width: 100%; 
+  background-color: #ddd;
+  border-radius: 15px; 
+}
+
+.skills {
+  text-align: right; 
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+  color: white;
+  border-radius: 15px 
+}
+
+/*------- Skill Varin ------- */
+.htmlv {width: 2%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));}
+.cssv {width: 2%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));} 
+.jsv {width: 2%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));} 
+.javav {width: 10%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));}
+
+/*------- Skill Nara ------- */
+.htmln {width: 5%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));}
+.cssn {width: 2%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));} 
+.jsn {width: 2%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));} 
+.javan {width: 10%; background: linear-gradient(45deg,rgb(199, 61, 61), rgb(245, 187, 63));} 
+
+.contact-links a {
+    margin-right: 15px;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 30px;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+}
+
+.contact-links a:hover {
+    background-color: red;
+    border: 1px solid white;
+    padding: 15px 35px;
+    font-size: 18px;
+    transition: 0.4s;
+}
